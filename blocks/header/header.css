@@ -30,7 +30,7 @@ header nav[aria-expanded='true'] {
   min-height: 100dvh;
 }
 
-@media (width >= 900px) {
+@media (width >= 960px) {
   header nav {
     display: flex;
     justify-content: space-between;
@@ -128,7 +128,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
+@media (width >= 960px) {
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
@@ -181,7 +181,7 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
-@media (width >= 900px) {
+@media (width >= 960px) {
   header nav .nav-sections {
     display: block;
     visibility: visible;
@@ -220,6 +220,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
+    justify-content: space-around;
     gap: 24px;
     margin: 0;
   }
@@ -235,14 +236,25 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
+    display:flex;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
+    justify-content:space-around ;
+
+    /* align-items: center; */ 
+    left:-450%;
+    /* box-sizing: border-box; */
+    width:1248px;
+    float:left;
+    /* margin-left:-300%; */
+    left:0;
+    right:0;
+    z-index:1;
+    /* max-width:1500px; */
+    top: 180%;
+    padding:20px;
+    background-color: white;
+    border-bottom:1px solid rgb(135, 132, 132);
+    /* white-space: initial; */
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
@@ -258,11 +270,54 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+    padding: 10px 0;
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+
+
+
+/* MY CODE */
+#nav > div.section.nav-tools > div > ul{
+  display: none;
+}
+
+@media (width >= 960px) {
+#nav > div.section.nav-sections > div > ul > li:nth-child(1){
+  display: none;
+}
+#nav > div.section.nav-tools > div > ul{
+  display: flex;
+  list-style-type: none;
+ 
+ }
+
+}
+ 
+
+#nav > div.section.nav-tools > div > ul > li{
+  position: relative;
+  /* top:15px; */
+  padding-left:10px;
+}
+#nav > div.section.nav-tools > div > ul > li > p{
+  position: relative;
+  top:-5px;
+}
+#nav > div.section.nav-tools > div > ul > li:nth-child(2) > picture > img{
+  width:30px;
+  height:30px;
+  position: relative;
+  top:0px;
+}
+#nav > div.section.nav-tools > div > ul > li:nth-child(3) > picture > img{
+  width:30px;
+  height:30px;
+  position: relative;
+  top:0px;
 }

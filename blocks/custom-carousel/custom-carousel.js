@@ -9,7 +9,7 @@ let visibleCards = calculateVisibleCards();
 let totalSlides;
 let currentIndex = 0;
 
-// Calculate number of visible cards based on screen size
+
 function calculateVisibleCards() {
     const width = window.innerWidth;
     if (width >= 1280) return 5;
@@ -18,12 +18,12 @@ function calculateVisibleCards() {
     return 2;
 }
 
-// Calculate how many slides we need
+
 function getTotalSlides() {
     return Math.ceil(cards.length / visibleCards);
 }
 
-// Render the dots for navigation
+
 function renderDots() {
     dotsContainer.innerHTML = "";
     totalSlides = getTotalSlides();
@@ -35,7 +35,7 @@ function renderDots() {
     }
 }
 
-// Slide to a specific index
+
 function slideTo(index) {
     if (index < 0 || index >= totalSlides) return;
     currentIndex = index;
@@ -44,29 +44,29 @@ function slideTo(index) {
     renderDots();
 }
 
-// Function to handle the last slide without repeating cards, but filling the area
+
 function handleLastSlide() {
     const remainingCards = cards.length % visibleCards;
     if (remainingCards === 0) return;
 
     const totalCards = cards.length;
     const startIndex = totalCards - remainingCards;
-    const lastCards = cards.slice(startIndex); // Get the last remaining cards
+    const lastCards = cards.slice(startIndex); 
 
-    // Clear the carousel and add the cards for the slides
+
     carousel.innerHTML = "";
     let slideStart = 0;
     while (slideStart < totalCards) {
         const slideEnd = Math.min(slideStart + visibleCards, totalCards);
         const slideCards = cards.slice(slideStart, slideEnd);
 
-        // Add cards to the carousel
+        
         slideCards.forEach(card => carousel.appendChild(card));
 
         slideStart = slideEnd;
     }
 
-    // If remaining cards are not enough, repeat the last cards before it (not from start, but from last used ones)
+
     if (remainingCards > 0) {
         const repeatCount = visibleCards - remainingCards;
         const previousCards = cards.slice(startIndex - repeatCount, startIndex);
@@ -74,14 +74,14 @@ function handleLastSlide() {
     }
 }
 
-// Initialize the carousel
+
 function initializeCarousel() {
     handleLastSlide();
     renderDots();
-    slideTo(0); // Start with the first slide
+    slideTo(0); 
 }
 
-// Recalculate on window resize
+
 window.addEventListener("resize", () => {
     visibleCards = calculateVisibleCards();
     initializeCarousel();

@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 960px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -44,6 +44,8 @@ function openOnKeydown(e) {
     // eslint-disable-next-line no-use-before-define
     toggleAllNavSections(focused.closest('.nav-sections'));
     focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
+    //mycode
+
   }
 }
 
@@ -164,3 +166,7 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 }
+
+
+const navDrop = document.querySelectorAll('.nav-drop')[0];
+// navDrop.classList.add('abc');

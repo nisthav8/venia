@@ -7,11 +7,18 @@
   .custom-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    margin-left:15px;
   }
-  
+  @media (width >= 1300px) {
+    .custom-carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      margin-left:75px;
+    }
+  }
   .custom-carousel > div {
     flex: 0 0 auto;
-    width: calc(100% / 2); /* Default for 360px view */
+    width: calc(100% / 2); 
   }
   
   .custom-carousel-wrapper .dots-container {
@@ -37,19 +44,19 @@
   
   @media (min-width: 641px) {
     .custom-carousel > div {
-      width: calc(100% / 3); /* 3 cards at a time */
+      width: calc(100% / 3); 
     }
   }
   
   @media (min-width: 961px) {
     .custom-carousel > div {
-      width: calc(100% / 4); /* 4 cards at a time */
+      width: calc(100% / 4); 
     }
   }
   
   @media (min-width: 1280px) {
     .custom-carousel > div {
-      width: calc(100% / 5); /* 5 cards at a time */
+      width: calc(100% / 5); 
     }
   }
   
