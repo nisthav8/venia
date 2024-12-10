@@ -18,3 +18,7 @@ export default async function decorate(block) {
 
   block.append(footer);
 }
+
+const secondaryFooterSection = document.querySelector('.footer  .section:nth-of-type(2)');
+console.log("abc");
+

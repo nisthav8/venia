@@ -1,0 +1,243 @@
+main{
+    margin:0 18px;
+}
+
+
+main > .carousel-container{ 
+   
+  min-width:486px;
+}
+
+.carousel .carousel-slides-container {
+    position: relative;
+  
+  }
+  
+  .carousel .carousel-slides,
+  .carousel .carousel-slide-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel .carousel-slides {
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overflow: scroll clip;
+    
+  }
+  
+  .carousel .carousel-slides::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel .carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    /* min-height: min(50vw, calc(100dvh - var(--header-height))); */
+  }
+  
+  .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
+    align-items: center;
+  }
+  
+  .carousel .carousel-slide:has(.carousel-slide-content[data-align='right']) {
+    align-items: flex-end;
+  }
+  
+  .carousel .carousel-slides .carousel-slide-image picture {
+    position: absolute;
+    inset: 0;
+    /* height:1000px; */
+  }
+  
+  .carousel .carousel-slides .carousel-slide-image picture > img {
+     /* height: 100%; */
+    /* width: 100%;  */
+    /* object-fit: cover;   */
+    /* width:800px; */
+    /* height:800px; */
+    
+    /* height:500px; */
+  }
+  
+   .carousel .carousel-slides .carousel-slide-content{
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+     text-align: center;
+     justify-items: center;
+     margin-top:50px;
+   /* object-fit: cover;   */
+ } 
+
+
+  .carousel .carousel-slides .carousel-slide-content {
+    z-index: 1;
+    margin:0;
+    padding:50px;
+    color: black;
+    /* background-color: #f5f2f2; */
+    position: relative;
+    /* width: var(--slide-content-width, auto); */
+    /* height:900px; */
+    width:50%;
+    
+    /* background-image:url('https://jnz3dtiuj77ca.dummycachetest.com/media/catalog/category/venia-hero1.jpg?auto=webp&format=pjpg&quality=85'); */
+    /* object-fit: cover;
+    background-position:top right;
+    background-repeat: no-repeat; */
+  }
+  
+  .carousel .carousel-slide-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 12px;
+    padding: 12px;
+    /* background-color:  #f5f2f2; */
+    line-height: 0;
+    margin:55px;
+  }
+  
+  .carousel .carousel-slide-indicator button {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background-color: gray;
+    transition: background-color 0.2s;
+  }
+  
+  .carousel .carousel-slide-indicator button:disabled,
+  .carousel .carousel-slide-indicator button:hover,
+  .carousel .carousel-slide-indicator button:focus-visible {
+    background-color: var(--text-color);
+  }
+  
+  .carousel .carousel-navigation-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    right: 12px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  /* stylelint-disable-next-line no-descending-specificity */
+  .carousel .carousel-navigation-buttons button {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    border-radius: 50%;
+    padding: 0;
+    background-color: rgba(19 19 19 / 25%);
+    transition: background-color 0.2s;
+  }
+  
+  .carousel .carousel-navigation-buttons button:hover,
+  .carousel .carousel-navigation-buttons button:focus-visible {
+    background-color: rgba(19 19 19 / 75%);
+  }
+  
+  .carousel .carousel-navigation-buttons button::after {
+    display: block;
+    content: '';
+    border: 2px solid;
+    border-bottom: 0;
+    border-left: 0;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 2px);
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+  
+  .carousel .carousel-navigation-buttons button.slide-next::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+    left: calc(50% - 2px);
+  }
+  
+  @media (width >= 600px) {
+    .carousel .carousel-navigation-buttons {
+      /* left: 24px;
+      right: 24px; */
+    }
+  
+    .carousel .carousel-slide .carousel-slide-content {
+      /* --slide-content-width: calc((100% - 184px) / 2);
+  
+      margin: 92px; */
+    }
+  
+    .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
+      /* --slide-content-width: auto; */
+    }
+  }
+
+
+/* MY CODE */
+.carousel .carousel-slide-content a{
+    color:black;
+    /* background-color:white; */
+    text-decoration: underline;
+    font-weight: normal;
+    font-family:Muli,sans-serif;
+    /* font-size:100%; */
+    /* background-color: white; */
+}
+.carousel .carousel-slide-content h2{
+    font-weight: lighter;
+    font-family:Muli,sans-serif;
+    /* font-size:100%; */
+}
+
+.carousel-container{
+    border-width: 1px;
+    border-style: none;
+    border-image: initial;
+    border-radius: 0px;
+    /* min-height:2500px; */
+    min-width:100%;
+    /* min-width:300px; */
+    /* padding: 400px; */
+    /* background-image:url('https://jnz3dtiuj77ca.dummycachetest.com/media/catalog/category/venia-hero1.jpg?auto=webp&format=pjpg&quality=85'); */
+    /* background-size:7500px; */
+    /* background-position:85% 0%; */
+    /* background-repeat: no-repeat; */
+} 
+    /* Default State (Desktop View) */
+    .carousel .carousel-slides .carousel-slide-image picture > img  {
+        transform: translateX(0);
+        /* height:400px; */
+         }
+  
+      /* Medium screen - Slight zoom and move to the right */
+      @media (max-width:900px) {
+        .carousel .carousel-slides .carousel-slide-image picture > img  {
+          /* transform: scale(1.2) translateX(10%); */
+          min-height:1200px;
+          object-fit:cover;
+          object-position:75% 10%;
+        }
+      }
+  
+      /* Small screen - More zoom and move further to the right */
+      @media (max-width: 480px) {
+        .carousel .carousel-slides .carousel-slide-image picture > img  {
+          /* transform: scale(1.5) translateX(20%); */
+        }
+      }
